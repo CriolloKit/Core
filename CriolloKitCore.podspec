@@ -4,6 +4,7 @@ Pod::Spec.new do |s|
   s.summary      = "Core structure for Crillo Kit"
 
   s.description  = <<-DESC
+                Core structure for Crillo Kit
                    DESC
 
   s.homepage     = "https://github.com/CriolloKit/Core"
@@ -16,7 +17,7 @@ Pod::Spec.new do |s|
 
   s.source       = { :git => "https://github.com/CriolloKit/Core.git", :tag => "0.0.1" }
 
-  s.source_files  = 'Code', 'Code/**/*.{h,m}'
+  s.source_files  = 'Core/Code', 'Core/Code/**/*.{h,m}'
 
   s.frameworks = 'Foundation'
 
