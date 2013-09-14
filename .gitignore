@@ -16,3 +16,19 @@ profile
 *.moved-aside
 DerivedData
 .idea/
+
+# Pods
+Pods
+
+#Idea
+.idea
+
+#Build and analyze tools
+build/*
+build.output/*
+pkg/*
+cpd-output.*
+report.html
+.rvmrc
+
+
