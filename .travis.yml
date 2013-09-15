@@ -3,4 +3,4 @@ before_install:
   - brew update
   - brew install ios-sim
   - brew install xctool
-script: xctool -workspace Core.xcworkspace -sdk iphonesimulator -scheme Core clean build
+script: xctool -workspace Core.xcworkspace -sdk iphonesimulator -scheme Core ARCHS="armv7, i386" clean build
