@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, '6.0'
 
-  s.source       = { :git => "https://github.com/CriolloKit/Core.git", :tag => "0.0.1" }
+  s.source       = { :git => "https://github.com/CriolloKit/Core.git", :tag => "#{s.version}" }
 
   s.source_files  = 'Core/Code', 'Core/Code/**/*.{h,m}'
 
