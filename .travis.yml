@@ -2,4 +2,4 @@ language: objective-c
 before_script:
   - brew update
   - which xctool || brew install xctool
-script: xctool -workspace Core.xcworkspace -scheme Core build ONLY_ACTIVE_ARCH=NO
+script: xctool -workspace Core.xcworkspace -sdk iphonesimulator -scheme Core clean build
