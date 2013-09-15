@@ -1,3 +1,5 @@
 language: objective-c
-workspace: Core.xcworkspace
-scheme: Core
+before_script:
+  - brew update
+  - which xctool || brew install xctool
+script: xctool -workspace Core.xcworkspace -scheme Core build ONLY_ACTIVE_ARCH=NO
