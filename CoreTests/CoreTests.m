@@ -6,29 +6,27 @@
 //  Copyright (c) 2013 CriolloKit. All rights reserved.
 //
 
-#import <XCTest/XCTest.h>
-
-@interface CoreTests : XCTestCase
-
-@end
+#import "CoreTests.h"
 
 @implementation CoreTests
 
 - (void)setUp
 {
     [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
+    
+    // Set-up code here.
 }
 
 - (void)tearDown
 {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
+    // Tear-down code here.
+    
     [super tearDown];
 }
 
 - (void)testExample
 {
-    XCTAssertTrue(1 == 1, @"yep");
+    STAssertNil(nil, @"nil!");
 }
 
 @end

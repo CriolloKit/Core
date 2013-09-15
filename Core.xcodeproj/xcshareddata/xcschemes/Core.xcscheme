@@ -28,8 +28,8 @@
             buildForAnalyzing = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AD0CCEA317E50CD000792099"
-               BuildableName = "CoreTests.xctest"
+               BlueprintIdentifier = "AD9254A917E620B9006EC87F"
+               BuildableName = "CoreTests.octest"
                BlueprintName = "CoreTests"
                ReferencedContainer = "container:Core.xcodeproj">
             </BuildableReference>
@@ -46,8 +46,8 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AD0CCEA317E50CD000792099"
-               BuildableName = "CoreTests.xctest"
+               BlueprintIdentifier = "AD9254A917E620B9006EC87F"
+               BuildableName = "CoreTests.octest"
                BlueprintName = "CoreTests"
                ReferencedContainer = "container:Core.xcodeproj">
             </BuildableReference>
