@@ -1,6 +1,6 @@
 language: objective-c
-before_script:
+before_install:
   - brew update
-  - which ios-sim || brew install ios-sim
-  - which xctool || brew install xctool
+  - brew install ios-sim
+  - brew install xctool
 script: xctool -workspace Core.xcworkspace -sdk iphonesimulator -scheme Core clean build
