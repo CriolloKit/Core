@@ -7,13 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		67EFA16DC7584A93A960D1BE /* libPods-CoreTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 193A1A8FC72841DB9E3C1AF0 /* libPods-CoreTests.a */; };
 		AD0CCE9817E50CD000792099 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD0CCE9717E50CD000792099 /* Foundation.framework */; };
 		AD0CCEC017E50CFA00792099 /* Core.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0CCEBF17E50CFA00792099 /* Core.m */; };
+		AD8A53AB17E730020043DBD5 /* Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8A53AA17E730020043DBD5 /* Spec.m */; };
+		AD8A53AC17E730CD0043DBD5 /* libCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AD0CCE9417E50CD000792099 /* libCore.a */; };
 		AD9254AC17E620B9006EC87F /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD9254AB17E620B9006EC87F /* SenTestingKit.framework */; };
 		AD9254AD17E620B9006EC87F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD0CCEA817E50CD000792099 /* UIKit.framework */; };
 		AD9254AE17E620B9006EC87F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD0CCE9717E50CD000792099 /* Foundation.framework */; };
 		AD9254B417E620B9006EC87F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AD9254B217E620B9006EC87F /* InfoPlist.strings */; };
-		AD9254B717E620B9006EC87F /* CoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AD9254B617E620B9006EC87F /* CoreTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -38,9 +40,9 @@
 		AD0CCEA817E50CD000792099 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		AD0CCEAF17E50CD000792099 /* CoreTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CoreTests-Info.plist"; sourceTree = "<group>"; };
 		AD0CCEB117E50CD000792099 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		AD0CCEB317E50CD000792099 /* CoreTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreTests.m; sourceTree = "<group>"; };
 		AD0CCEBE17E50CFA00792099 /* Core.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Core.h; sourceTree = "<group>"; };
 		AD0CCEBF17E50CFA00792099 /* Core.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Core.m; sourceTree = "<group>"; };
+		AD8A53AA17E730020043DBD5 /* Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Spec.m; sourceTree = "<group>"; };
 		AD9254AA17E620B9006EC87F /* CoreTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD9254AB17E620B9006EC87F /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		AD9254B117E620B9006EC87F /* CoreTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CoreTests-Info.plist"; sourceTree = "<group>"; };
@@ -63,9 +65,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD8A53AC17E730CD0043DBD5 /* libCore.a in Frameworks */,
 				AD9254AC17E620B9006EC87F /* SenTestingKit.framework in Frameworks */,
 				AD9254AD17E620B9006EC87F /* UIKit.framework in Frameworks */,
 				AD9254AE17E620B9006EC87F /* Foundation.framework in Frameworks */,
+				67EFA16DC7584A93A960D1BE /* libPods-CoreTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,8 +129,8 @@
 		AD0CCEAD17E50CD000792099 /* CoreTests */ = {
 			isa = PBXGroup;
 			children = (
-				AD0CCEB317E50CD000792099 /* CoreTests.m */,
 				AD0CCEAE17E50CD000792099 /* Supporting Files */,
+				AD8A53AA17E730020043DBD5 /* Spec.m */,
 			);
 			path = CoreTests;
 			sourceTree = "<group>";
@@ -193,10 +197,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AD9254B917E620B9006EC87F /* Build configuration list for PBXNativeTarget "CoreTests" */;
 			buildPhases = (
+				98D1956580304FBBAC1B6869 /* Check Pods Manifest.lock */,
 				AD9254A517E620B9006EC87F /* Sources */,
 				AD9254A617E620B9006EC87F /* Frameworks */,
 				AD9254A717E620B9006EC87F /* Resources */,
 				AD9254A817E620B9006EC87F /* ShellScript */,
+				B3F35C6A0D6A4F478605A495 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -215,11 +221,6 @@
 			attributes = {
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = CriolloKit;
-				TargetAttributes = {
-					AD0CCEA317E50CD000792099 = {
-						TestTargetID = AD0CCE9317E50CD000792099;
-					};
-				};
 			};
 			buildConfigurationList = AD0CCE8F17E50CD000792099 /* Build configuration list for PBXProject "Core" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -251,6 +252,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		98D1956580304FBBAC1B6869 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		AD9254A817E620B9006EC87F /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -263,6 +279,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+		B3F35C6A0D6A4F478605A495 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-CoreTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -279,7 +310,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD9254B717E620B9006EC87F /* CoreTests.m in Sources */,
+				AD8A53AB17E730020043DBD5 /* Spec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,6 +438,7 @@
 		};
 		AD9254BA17E620B9006EC87F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 87516076236D45A5879F0703 /* Pods-CoreTests.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
@@ -425,6 +457,7 @@
 		};
 		AD9254BB17E620B9006EC87F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 87516076236D45A5879F0703 /* Pods-CoreTests.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
@@ -468,6 +501,7 @@
 				AD9254BB17E620B9006EC87F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
