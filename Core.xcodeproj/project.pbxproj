@@ -56,7 +56,6 @@
 		EA60AED217EAEF8E002780AC /* CRAppWindowOrientationConfigurator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CRAppWindowOrientationConfigurator.h; sourceTree = "<group>"; };
 		EA60AED317EAEFC4002780AC /* CRStatusBarOrientationHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CRStatusBarOrientationHandler.h; sourceTree = "<group>"; };
 		EA60AED417EAF04C002780AC /* CRAppMemoryWarrningConfigurator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CRAppMemoryWarrningConfigurator.h; sourceTree = "<group>"; };
-		EA60AED517EAF0B9002780AC /* CRAppConfiguration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CRAppConfiguration.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,7 +171,6 @@
 		EA60AECA17EAEC36002780AC /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				EA60AED517EAF0B9002780AC /* CRAppConfiguration.h */,
 				EA60AECB17EAEC59002780AC /* CRAppearanceConfigurator.h */,
 				EA60AECD17EAED3C002780AC /* CRPushNotificationsConfigurator.h */,
 				EA60AECC17EAECD0002780AC /* CRPushNotificationReceiver.h */,

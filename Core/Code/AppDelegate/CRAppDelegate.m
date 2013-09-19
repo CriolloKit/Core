@@ -7,7 +7,6 @@
 //
 
 #import "CRAppDelegate.h"
-#import "CRAppConfiguration.h"
 #import "CRAppearanceConfigurator.h"
 #import "CRPushNotificationsConfigurator.h"
 #import "CRPushNotificationReceiver.h"
@@ -21,7 +20,16 @@
 
 @interface CRAppDelegate ()
 
-@property (nonatomic, strong) id <CRAppConfiguration> configurator;
+@property (nonatomic, strong) id <CRAppearanceConfigurator> appearanceConfigurator;
+@property (nonatomic, strong) id <CRPushNotificationsConfigurator> pushNotificationsConfigurator;
+@property (nonatomic, strong) id <CRPushNotificationReceiver> pushNotificationReceiver;
+@property (nonatomic, strong) id <CRLocalNotificationReceiver> localNotificationReceiver;
+@property (nonatomic, strong) id <CRAppLifeConfigurator> appLifeCycleConfigurator;
+@property (nonatomic, strong) id <CRAppURLHandler> urlHandler;
+@property (nonatomic, strong) id <CRAppRestorationStateConfigurator> restorationConfigurator;
+@property (nonatomic, strong) id <CRAppMemoryWarrningConfigurator> appMemoryWarrningConfigurator;
+@property (nonatomic, strong) id <CRAppWindowOrientationConfigurator> windowOrientationConfigurator;
+@property (nonatomic, strong) id <CRStatusBarOrientationHandler> statusBarOrientationHandler;
 
 @end
 
@@ -39,7 +47,8 @@
 
 - (void)setupAppearance
 {
-    id <CRAppearanceConfigurator> appearanceConfigurator = [self.configurator appearanceConfigurator];
+    id <CRAppearanceConfigurator> appearanceConfigurator = self.appearanceConfigurator;
+    
     [appearanceConfigurator setup];
 }
 
@@ -48,38 +57,30 @@
 
 - (void)setupAPNS
 {
-    id <CRPushNotificationsConfigurator> pushNotificationsConfigurator = self.configurator.pushNotificationsConfigurator;
-    
-    if (pushNotificationsConfigurator) {
-        [[UIApplication sharedApplication] registerForRemoteNotificationTypes:pushNotificationsConfigurator.notificationTypes];
+    if (self.pushNotificationsConfigurator) {
+        [[UIApplication sharedApplication] registerForRemoteNotificationTypes:self.pushNotificationsConfigurator.notificationTypes];
     }
 }
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
 {
-    id <CRPushNotificationsConfigurator> pushNotificationsConfigurator = [self.configurator pushNotificationsConfigurator];
-    
     SEL didRegisterSelector = @selector(didRegisterForRemoteNotificationsWithDeviceToken:);
     
-    [self configurator:pushNotificationsConfigurator performSelector:didRegisterSelector withObject:deviceToken];
+    [self configurator:self.pushNotificationsConfigurator performSelector:didRegisterSelector withObject:deviceToken];
 }
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
 {
-    id <CRPushNotificationsConfigurator> pushNotificationsConfigurator = [self.configurator pushNotificationsConfigurator];
-    
     SEL didFailRegisterSelector = @selector(didFailToRegisterForRemoteNotificationsWithError:);
     
-    [self configurator:pushNotificationsConfigurator performSelector:didFailRegisterSelector withObject:error];
+    [self configurator:self.pushNotificationsConfigurator performSelector:didFailRegisterSelector withObject:error];
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
 {
-    id <CRPushNotificationReceiver> pushNotificationsReceiver = [self.configurator pushNotificationReceiver];
-    
     SEL didReceiveRemoteNotificationSelector = @selector(didReceiveRemoteNotification:);
     
-    [self configurator:pushNotificationsReceiver performSelector:didReceiveRemoteNotificationSelector withObject:userInfo];
+    [self configurator:self.pushNotificationReceiver performSelector:didReceiveRemoteNotificationSelector withObject:userInfo];
 }
 
 #pragma mark -
@@ -87,11 +88,9 @@
 
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
 {
-    id <CRLocalNotificationReceiver> localNotificationsReceiver = [self.configurator localNotificationReceiver];
-    
     SEL didReceiveLocalNotificationSelector = @selector(didReceiveLocalNotification:);
     
-    [self configurator:localNotificationsReceiver performSelector:didReceiveLocalNotificationSelector withObject:notification];
+    [self configurator:self.localNotificationReceiver performSelector:didReceiveLocalNotificationSelector withObject:notification];
 }
 
 #pragma mark -
@@ -99,37 +98,27 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
-    id <CRAppLifeConfigurator> appLifeConfigurator =  self.configurator.appLifeConfigurator;
-    
-    [self configurator:appLifeConfigurator performSelector:_cmd withObject:application];
+    [self configurator:self.appLifeCycleConfigurator performSelector:_cmd withObject:application];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
-    id <CRAppLifeConfigurator> appLifeConfigurator =  self.configurator.appLifeConfigurator;
-    
-    [self configurator:appLifeConfigurator performSelector:_cmd withObject:application];
+    [self configurator:self.appLifeCycleConfigurator performSelector:_cmd withObject:application];
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
-    id <CRAppLifeConfigurator> appLifeConfigurator =  self.configurator.appLifeConfigurator;
-    
-    [self configurator:appLifeConfigurator performSelector:_cmd withObject:application];
+    [self configurator:self.appLifeCycleConfigurator performSelector:_cmd withObject:application];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
-    id <CRAppLifeConfigurator> appLifeConfigurator =  self.configurator.appLifeConfigurator;
-    
-    [self configurator:appLifeConfigurator performSelector:_cmd withObject:application];
+    [self configurator:self.appLifeCycleConfigurator performSelector:_cmd withObject:application];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
-    id <CRAppLifeConfigurator> appLifeConfigurator =  self.configurator.appLifeConfigurator;
-    
-    [self configurator:appLifeConfigurator performSelector:_cmd withObject:application];
+    [self configurator:self.appLifeCycleConfigurator performSelector:_cmd withObject:application];
 }
 
 #pragma mark -
@@ -137,19 +126,15 @@
 
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
 {
-    id <CRAppURLHandler> urlHandler = [self.configurator urlHandler];
-    
-    return [urlHandler handleOpenURL:url];
+    return [self.urlHandler handleOpenURL:url];
 }
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {
-    id <CRAppURLHandler> urlHandler = [self.configurator urlHandler];
-    
     SEL openURLSelector = @selector(openURL:sourceApplication:annotation:);
     
-    if ([urlHandler respondsToSelector:openURLSelector]) {
-        return [urlHandler openURL:url sourceApplication:sourceApplication annotation:annotation];
+    if ([self.urlHandler respondsToSelector:openURLSelector]) {
+        return [self.urlHandler openURL:url sourceApplication:sourceApplication annotation:annotation];
     }
     
     return NO;
@@ -161,12 +146,10 @@
 - (UIViewController *)application:(UIApplication *)application viewControllerWithRestorationIdentifierPath:(NSArray *)identifierComponents
                             coder:(NSCoder *)coder
 {
-    id <CRAppRestorationStateConfigurator> restorationStateConfigurator = [self.configurator restorationConfigurator];
-    
     SEL viewControllerWithRestorationIdentifierPathSelector = @selector(viewControllerWithIdentifierPath:coder:);
     
-    if ([restorationStateConfigurator respondsToSelector:viewControllerWithRestorationIdentifierPathSelector]) {
-      return [restorationStateConfigurator viewControllerWithIdentifierPath:identifierComponents coder:coder];
+    if ([self.restorationConfigurator respondsToSelector:viewControllerWithRestorationIdentifierPathSelector]) {
+      return [self.restorationConfigurator viewControllerWithIdentifierPath:identifierComponents coder:coder];
     }
     
     return nil;
@@ -174,12 +157,10 @@
 
 - (BOOL)application:(UIApplication *)application shouldSaveApplicationState:(NSCoder *)coder
 {
-    id <CRAppRestorationStateConfigurator> restorationStateConfigurator = [self.configurator restorationConfigurator];
-
     SEL shouldSaveApplicationStateSelector = @selector(shouldSaveApplicationState:);
     
-    if ([restorationStateConfigurator respondsToSelector:shouldSaveApplicationStateSelector]) {
-        return [restorationStateConfigurator shouldSaveApplicationState:coder];
+    if ([self.restorationConfigurator respondsToSelector:shouldSaveApplicationStateSelector]) {
+        return [self.restorationConfigurator shouldSaveApplicationState:coder];
     }
     
     return NO;
@@ -187,12 +168,10 @@
 
 - (BOOL)application:(UIApplication *)application shouldRestoreApplicationState:(NSCoder *)coder
 {
-    id <CRAppRestorationStateConfigurator> restorationStateConfigurator = [self.configurator restorationConfigurator];
-    
     SEL shouldRestoreApplicationStateSelector = @selector(shouldRestoreApplicationState:);
     
-    if ([restorationStateConfigurator respondsToSelector:shouldRestoreApplicationStateSelector]) {
-        [restorationStateConfigurator shouldRestoreApplicationState:coder];
+    if ([self.restorationConfigurator respondsToSelector:shouldRestoreApplicationStateSelector]) {
+        [self.restorationConfigurator shouldRestoreApplicationState:coder];
     }
     
     return NO;
@@ -200,20 +179,16 @@
 
 - (void)application:(UIApplication *)application willEncodeRestorableStateWithCoder:(NSCoder *)coder
 {
-    id <CRAppRestorationStateConfigurator> restorationStateConfigurator = [self.configurator restorationConfigurator];
-    
     SEL willEndoceRestorableStateSelector = @selector(willEncodeRestorableStateWithCoder:);
     
-    [self configurator:restorationStateConfigurator performSelector:willEndoceRestorableStateSelector withObject:coder];
+    [self configurator:self.restorationConfigurator performSelector:willEndoceRestorableStateSelector withObject:coder];
 }
 
 - (void)application:(UIApplication *)application didDecodeRestorableStateWithCoder:(NSCoder *)coder
 {
-    id <CRAppRestorationStateConfigurator> restorationStateConfigurator = [self.configurator restorationConfigurator];
-    
     SEL didDecodeRestorableStateSelector = @selector(didDecodeRestorableStateWithCoder:);
     
-    [self configurator:restorationStateConfigurator performSelector:didDecodeRestorableStateSelector withObject:coder];
+    [self configurator:self.restorationConfigurator performSelector:didDecodeRestorableStateSelector withObject:coder];
 }
 
 #pragma mark -
@@ -221,9 +196,7 @@
 
 - (void)applicationDidReceiveMemoryWarning:(UIApplication *)application
 {
-    id <CRAppMemoryWarrningConfigurator> memoryWarrningConfigurator = [self.configurator appMemoryWarrningConfigurator];
-    
-    [self configurator:memoryWarrningConfigurator performSelector:_cmd];
+    [self configurator:self.appMemoryWarrningConfigurator performSelector:_cmd];
 }
 
 #pragma mark -
@@ -231,10 +204,8 @@
 
 - (NSUInteger)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window
 {
-    id <CRAppWindowOrientationConfigurator> windowOrientationConfigurator = [self.configurator windowOrientationConfigurator];
-    
-    if ([windowOrientationConfigurator respondsToSelector:@selector(supportedInterfaceOrientationsForWindow:)]) {
-        return [windowOrientationConfigurator supportedInterfaceOrientationsForWindow:window];
+    if ([self.windowOrientationConfigurator respondsToSelector:@selector(supportedInterfaceOrientationsForWindow:)]) {
+        return [self.windowOrientationConfigurator supportedInterfaceOrientationsForWindow:window];
     }
     
     return 0;
@@ -245,45 +216,37 @@
 
 - (void)application:(UIApplication *)application willChangeStatusBarOrientation:(UIInterfaceOrientation)newStatusBarOrientation duration:(NSTimeInterval)duration
 {
-    id <CRStatusBarOrientationHandler> statusBarOrientationHandler = [self.configurator statusBarOrientationHandler];
-    
     SEL willChangeStatusBarOrientationSelector = @selector(willChangeStatusBarOrientation:duration:);
     
-    if ([statusBarOrientationHandler respondsToSelector:willChangeStatusBarOrientationSelector]) {
-        [statusBarOrientationHandler willChangeStatusBarOrientation:newStatusBarOrientation duration:duration];
+    if ([self.statusBarOrientationHandler respondsToSelector:willChangeStatusBarOrientationSelector]) {
+        [self.statusBarOrientationHandler willChangeStatusBarOrientation:newStatusBarOrientation duration:duration];
     }
 }
 
 - (void)application:(UIApplication *)application didChangeStatusBarOrientation:(UIInterfaceOrientation)oldStatusBarOrientation
 {
-    id <CRStatusBarOrientationHandler> statusBarOrientationHandler = [self.configurator statusBarOrientationHandler];
-    
     SEL didChangeStatusBarOrientationSelector = @selector(didChangeStatusBarOrientation:);
     
-    if ([statusBarOrientationHandler respondsToSelector:didChangeStatusBarOrientationSelector]) {
-        [statusBarOrientationHandler didChangeStatusBarOrientation:oldStatusBarOrientation];
+    if ([self.statusBarOrientationHandler respondsToSelector:didChangeStatusBarOrientationSelector]) {
+        [self.statusBarOrientationHandler didChangeStatusBarOrientation:oldStatusBarOrientation];
     }
 }
 
 - (void)application:(UIApplication *)application willChangeStatusBarFrame:(CGRect)newStatusBarFrame
 {
-    id <CRStatusBarOrientationHandler> statusBarOrientationHandler = [self.configurator statusBarOrientationHandler];
-    
     SEL willChangeStatusBarFrameSelector = @selector(willChangeStatusBarFrame:);
     
-    if ([statusBarOrientationHandler respondsToSelector:willChangeStatusBarFrameSelector]) {
-        [statusBarOrientationHandler willChangeStatusBarFrame:newStatusBarFrame];
+    if ([self.statusBarOrientationHandler respondsToSelector:willChangeStatusBarFrameSelector]) {
+        [self.statusBarOrientationHandler willChangeStatusBarFrame:newStatusBarFrame];
     }
 }
 
 - (void)application:(UIApplication *)application didChangeStatusBarFrame:(CGRect)oldStatusBarFrame
 {
-    id <CRStatusBarOrientationHandler> statusBarOrientationHandler = [self.configurator statusBarOrientationHandler];
-    
     SEL didChangeStatusBarFrameSelector = @selector(didChangeStatusBarFrame:);
     
-    if ([statusBarOrientationHandler respondsToSelector:didChangeStatusBarFrameSelector]) {
-        [statusBarOrientationHandler didChangeStatusBarFrame:oldStatusBarFrame];
+    if ([self.statusBarOrientationHandler respondsToSelector:didChangeStatusBarFrameSelector]) {
+        [self.statusBarOrientationHandler didChangeStatusBarFrame:oldStatusBarFrame];
     }
     
 }
