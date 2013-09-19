@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		67EFA16DC7584A93A960D1BE /* libPods-CoreTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 193A1A8FC72841DB9E3C1AF0 /* libPods-CoreTests.a */; };
 		AD0CCE9817E50CD000792099 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD0CCE9717E50CD000792099 /* Foundation.framework */; };
-		AD0CCEC017E50CFA00792099 /* Core.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0CCEBF17E50CFA00792099 /* Core.m */; };
 		AD8A53AB17E730020043DBD5 /* Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8A53AA17E730020043DBD5 /* Spec.m */; };
 		AD8A53AC17E730CD0043DBD5 /* libCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AD0CCE9417E50CD000792099 /* libCore.a */; };
 		AD9254AC17E620B9006EC87F /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD9254AB17E620B9006EC87F /* SenTestingKit.framework */; };
 		AD9254AD17E620B9006EC87F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD0CCEA817E50CD000792099 /* UIKit.framework */; };
 		AD9254AE17E620B9006EC87F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD0CCE9717E50CD000792099 /* Foundation.framework */; };
 		AD9254B417E620B9006EC87F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AD9254B217E620B9006EC87F /* InfoPlist.strings */; };
+		EA60AEC917EAEBB3002780AC /* CRAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EA60AEC817EAEBB3002780AC /* CRAppDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -38,18 +38,25 @@
 		AD0CCE9B17E50CD000792099 /* Core-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Core-Prefix.pch"; sourceTree = "<group>"; };
 		AD0CCEA517E50CD000792099 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		AD0CCEA817E50CD000792099 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		AD0CCEAF17E50CD000792099 /* CoreTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CoreTests-Info.plist"; sourceTree = "<group>"; };
-		AD0CCEB117E50CD000792099 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		AD0CCEBE17E50CFA00792099 /* Core.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Core.h; sourceTree = "<group>"; };
-		AD0CCEBF17E50CFA00792099 /* Core.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Core.m; sourceTree = "<group>"; };
 		AD8A53AA17E730020043DBD5 /* Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Spec.m; sourceTree = "<group>"; };
 		AD9254AA17E620B9006EC87F /* CoreTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD9254AB17E620B9006EC87F /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		AD9254B117E620B9006EC87F /* CoreTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CoreTests-Info.plist"; sourceTree = "<group>"; };
 		AD9254B317E620B9006EC87F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		AD9254B517E620B9006EC87F /* CoreTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreTests.h; sourceTree = "<group>"; };
-		AD9254B617E620B9006EC87F /* CoreTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreTests.m; sourceTree = "<group>"; };
 		AD9254B817E620B9006EC87F /* CoreTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CoreTests-Prefix.pch"; sourceTree = "<group>"; };
+		EA60AEC717EAEBB3002780AC /* CRAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRAppDelegate.h; sourceTree = "<group>"; };
+		EA60AEC817EAEBB3002780AC /* CRAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRAppDelegate.m; sourceTree = "<group>"; };
+		EA60AECB17EAEC59002780AC /* CRAppearanceConfigurator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRAppearanceConfigurator.h; sourceTree = "<group>"; };
+		EA60AECC17EAECD0002780AC /* CRPushNotificationReceiver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRPushNotificationReceiver.h; sourceTree = "<group>"; };
+		EA60AECD17EAED3C002780AC /* CRPushNotificationsConfigurator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRPushNotificationsConfigurator.h; sourceTree = "<group>"; };
+		EA60AECE17EAED7F002780AC /* CRLocalNotificationReceiver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CRLocalNotificationReceiver.h; sourceTree = "<group>"; };
+		EA60AECF17EAEDBA002780AC /* CRAppURLHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CRAppURLHandler.h; sourceTree = "<group>"; };
+		EA60AED017EAEE52002780AC /* CRAppRestorationStateConfigurator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CRAppRestorationStateConfigurator.h; sourceTree = "<group>"; };
+		EA60AED117EAEF37002780AC /* CRAppLifeConfigurator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CRAppLifeConfigurator.h; sourceTree = "<group>"; };
+		EA60AED217EAEF8E002780AC /* CRAppWindowOrientationConfigurator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CRAppWindowOrientationConfigurator.h; sourceTree = "<group>"; };
+		EA60AED317EAEFC4002780AC /* CRStatusBarOrientationHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CRStatusBarOrientationHandler.h; sourceTree = "<group>"; };
+		EA60AED417EAF04C002780AC /* CRAppMemoryWarrningConfigurator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CRAppMemoryWarrningConfigurator.h; sourceTree = "<group>"; };
+		EA60AED517EAF0B9002780AC /* CRAppConfiguration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CRAppConfiguration.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +87,6 @@
 			isa = PBXGroup;
 			children = (
 				AD0CCE9917E50CD000792099 /* Core */,
-				AD0CCEAD17E50CD000792099 /* CoreTests */,
 				AD9254AF17E620B9006EC87F /* CoreTests */,
 				AD0CCE9617E50CD000792099 /* Frameworks */,
 				AD0CCE9517E50CD000792099 /* Products */,
@@ -126,29 +132,11 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		AD0CCEAD17E50CD000792099 /* CoreTests */ = {
-			isa = PBXGroup;
-			children = (
-				AD0CCEAE17E50CD000792099 /* Supporting Files */,
-				AD8A53AA17E730020043DBD5 /* Spec.m */,
-			);
-			path = CoreTests;
-			sourceTree = "<group>";
-		};
-		AD0CCEAE17E50CD000792099 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				AD0CCEAF17E50CD000792099 /* CoreTests-Info.plist */,
-				AD0CCEB017E50CD000792099 /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		AD0CCEBD17E50CFA00792099 /* Code */ = {
 			isa = PBXGroup;
 			children = (
-				AD0CCEBE17E50CFA00792099 /* Core.h */,
-				AD0CCEBF17E50CFA00792099 /* Core.m */,
+				EA60AEC617EAEBA8002780AC /* AppDelegate */,
+				EA60AECA17EAEC36002780AC /* Protocols */,
 			);
 			path = Code;
 			sourceTree = "<group>";
@@ -156,8 +144,7 @@
 		AD9254AF17E620B9006EC87F /* CoreTests */ = {
 			isa = PBXGroup;
 			children = (
-				AD9254B517E620B9006EC87F /* CoreTests.h */,
-				AD9254B617E620B9006EC87F /* CoreTests.m */,
+				AD8A53AA17E730020043DBD5 /* Spec.m */,
 				AD9254B017E620B9006EC87F /* Supporting Files */,
 			);
 			path = CoreTests;
@@ -171,6 +158,33 @@
 				AD9254B817E620B9006EC87F /* CoreTests-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EA60AEC617EAEBA8002780AC /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				EA60AEC717EAEBB3002780AC /* CRAppDelegate.h */,
+				EA60AEC817EAEBB3002780AC /* CRAppDelegate.m */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		EA60AECA17EAEC36002780AC /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				EA60AED517EAF0B9002780AC /* CRAppConfiguration.h */,
+				EA60AECB17EAEC59002780AC /* CRAppearanceConfigurator.h */,
+				EA60AECD17EAED3C002780AC /* CRPushNotificationsConfigurator.h */,
+				EA60AECC17EAECD0002780AC /* CRPushNotificationReceiver.h */,
+				EA60AECE17EAED7F002780AC /* CRLocalNotificationReceiver.h */,
+				EA60AED117EAEF37002780AC /* CRAppLifeConfigurator.h */,
+				EA60AECF17EAEDBA002780AC /* CRAppURLHandler.h */,
+				EA60AED017EAEE52002780AC /* CRAppRestorationStateConfigurator.h */,
+				EA60AED417EAF04C002780AC /* CRAppMemoryWarrningConfigurator.h */,
+				EA60AED217EAEF8E002780AC /* CRAppWindowOrientationConfigurator.h */,
+				EA60AED317EAEFC4002780AC /* CRStatusBarOrientationHandler.h */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -302,7 +316,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD0CCEC017E50CFA00792099 /* Core.m in Sources */,
+				EA60AEC917EAEBB3002780AC /* CRAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,14 +331,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		AD0CCEB017E50CD000792099 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AD0CCEB117E50CD000792099 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 		AD9254B217E620B9006EC87F /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
