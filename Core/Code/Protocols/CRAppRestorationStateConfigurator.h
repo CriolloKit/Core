@@ -15,7 +15,6 @@
 - (UIViewController *)viewControllerWithIdentifierPath:(NSArray *)identifierComponents coder:(NSCoder *)coder;
 
 - (BOOL)shouldSaveApplicationState:(NSCoder *)coder;
-
 - (BOOL)shouldRestoreApplicationState:(NSCoder *)coder;
 
 - (void)willEncodeRestorableStateWithCoder:(NSCoder *)coder;

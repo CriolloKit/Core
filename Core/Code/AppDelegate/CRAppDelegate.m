@@ -7,33 +7,23 @@
 //
 
 #import "CRAppDelegate.h"
-#import "CRAppearanceConfigurator.h"
-#import "CRPushNotificationsConfigurator.h"
-#import "CRPushNotificationReceiver.h"
-#import "CRLocalNotificationReceiver.h"
-#import "CRAppLifeConfigurator.h"
-#import "CRAppURLHandler.h"
-#import "CRAppRestorationStateConfigurator.h"
-#import "CRAppMemoryWarrningConfigurator.h"
-#import "CRAppWindowOrientationConfigurator.h"
-#import "CRStatusBarOrientationHandler.h"
 
-@interface CRAppDelegate ()
-
-@property (nonatomic, strong) id <CRAppearanceConfigurator> appearanceConfigurator;
-@property (nonatomic, strong) id <CRPushNotificationsConfigurator> pushNotificationsConfigurator;
-@property (nonatomic, strong) id <CRPushNotificationReceiver> pushNotificationReceiver;
-@property (nonatomic, strong) id <CRLocalNotificationReceiver> localNotificationReceiver;
-@property (nonatomic, strong) id <CRAppLifeConfigurator> appLifeCycleConfigurator;
-@property (nonatomic, strong) id <CRAppURLHandler> urlHandler;
-@property (nonatomic, strong) id <CRAppRestorationStateConfigurator> restorationConfigurator;
-@property (nonatomic, strong) id <CRAppMemoryWarrningConfigurator> appMemoryWarrningConfigurator;
-@property (nonatomic, strong) id <CRAppWindowOrientationConfigurator> windowOrientationConfigurator;
-@property (nonatomic, strong) id <CRStatusBarOrientationHandler> statusBarOrientationHandler;
+@interface CRAppDelegate () <CRApplicationDelegate>
 
 @end
 
 @implementation CRAppDelegate
+
+@synthesize appearanceConfigurator;
+@synthesize pushNotificationsConfigurator;
+@synthesize pushNotificationReceiver;
+@synthesize localNotificationReceiver;
+@synthesize appLifeCycleConfigurator;
+@synthesize urlHandler;
+@synthesize restorationConfigurator;
+@synthesize appMemoryWarrningConfigurator;
+@synthesize windowOrientationConfigurator;
+@synthesize statusBarOrientationHandler;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -47,9 +37,7 @@
 
 - (void)setupAppearance
 {
-    id <CRAppearanceConfigurator> appearanceConfigurator = self.appearanceConfigurator;
-    
-    [appearanceConfigurator setup];
+    [self.appearanceConfigurator setup];
 }
 
 #pragma mark -

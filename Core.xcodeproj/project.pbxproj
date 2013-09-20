@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		67EFA16DC7584A93A960D1BE /* libPods-CoreTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 193A1A8FC72841DB9E3C1AF0 /* libPods-CoreTests.a */; };
+		68BC5D3617EC662D00F554CF /* AppDelegateSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 68BC5D3517EC662D00F554CF /* AppDelegateSpec.m */; };
 		AD0CCE9817E50CD000792099 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD0CCE9717E50CD000792099 /* Foundation.framework */; };
 		AD8A53AB17E730020043DBD5 /* Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8A53AA17E730020043DBD5 /* Spec.m */; };
 		AD8A53AC17E730CD0043DBD5 /* libCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AD0CCE9417E50CD000792099 /* libCore.a */; };
@@ -32,6 +33,8 @@
 
 /* Begin PBXFileReference section */
 		193A1A8FC72841DB9E3C1AF0 /* libPods-CoreTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CoreTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		68BC5D3517EC662D00F554CF /* AppDelegateSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegateSpec.m; sourceTree = "<group>"; };
+		68BC5D3917EC6C7700F554CF /* CRApplicationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRApplicationDelegate.h; sourceTree = "<group>"; };
 		87516076236D45A5879F0703 /* Pods-CoreTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoreTests.xcconfig"; path = "Pods/Pods-CoreTests.xcconfig"; sourceTree = "<group>"; };
 		AD0CCE9417E50CD000792099 /* libCore.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCore.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD0CCE9717E50CD000792099 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -145,6 +148,7 @@
 			children = (
 				AD8A53AA17E730020043DBD5 /* Spec.m */,
 				AD9254B017E620B9006EC87F /* Supporting Files */,
+				68BC5D3517EC662D00F554CF /* AppDelegateSpec.m */,
 			);
 			path = CoreTests;
 			sourceTree = "<group>";
@@ -171,6 +175,7 @@
 		EA60AECA17EAEC36002780AC /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				68BC5D3917EC6C7700F554CF /* CRApplicationDelegate.h */,
 				EA60AECB17EAEC59002780AC /* CRAppearanceConfigurator.h */,
 				EA60AECD17EAED3C002780AC /* CRPushNotificationsConfigurator.h */,
 				EA60AECC17EAECD0002780AC /* CRPushNotificationReceiver.h */,
@@ -323,6 +328,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD8A53AB17E730020043DBD5 /* Spec.m in Sources */,
+				68BC5D3617EC662D00F554CF /* AppDelegateSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -455,6 +461,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/Code/Protocols";
 				VALID_ARCHS = "armv7 i386";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -474,6 +481,7 @@
 				INFOPLIST_FILE = "CoreTests/CoreTests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/Code/Protocols";
 				VALID_ARCHS = "armv7 i386";
 				WRAPPER_EXTENSION = octest;
 			};
