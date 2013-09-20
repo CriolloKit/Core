@@ -1,12 +1,54 @@
 #import <Kiwi/Kiwi.h>
 
+#import "CRLaunchConfigurator.h"
+#import "CRSampleTargetConfguration.h"
+#import "CRLaunchConfigurator_PrivateHeaders.h"
 
-SPEC_BEGIN(CoreSpec)
 
-describe(@"Feature", ^{
-   it(@"should work", ^{
-       [[[NSObject new] shouldNot] beNil];
+SPEC_BEGIN(CRLaunchConfiguratorSpec)
+
+describe(@"CRLaunchConfigurator Spec", ^{
+   it(@"Should create instance of CRSampleTargetConfguration and run setup method", ^{
+       
+       NSString *sampleTargetConfigurationClassString = NSStringFromClass([CRSampleTargetConfguration class]);
+       
+       NSDictionary *configDictionary = @{@"Debug" : sampleTargetConfigurationClassString,
+                                          @"Release" : sampleTargetConfigurationClassString};
+       
+       NSDictionary *rootDictionary = @{kCriolloKitConfigDictionaryKey: configDictionary};
+       
+       [CRLaunchConfigurator stub:@selector(rootDictionary) andReturn:rootDictionary];
+       
+       [[CRSampleTargetConfguration should] receive:@selector(setup)];
+       
+       [CRLaunchConfigurator setup];
    });
+    
+    it(@"Should raise due to non exists key in info dictionary", ^{
+        [[theBlock(^{
+            [CRLaunchConfigurator configurationDictionaryFromCriolloConfigKey:kCriolloKitConfigDictionaryKey];
+        }) should] raise];
+    });
+    
+    it(@"Should raise due to non exists class in config dictionary", ^{
+        [[theBlock(^{
+            [CRLaunchConfigurator configurationClassFromDictionary:@{} currentConfiguration:@""];
+        }) should] raise];
+    });
+    
+    it(@"Should raise due to non-conforming CRTargetConfiguration protocol on building class", ^{
+        NSString *sampleTargetConfigurationClassString = NSStringFromClass([NSString class]);
+        
+        NSDictionary *configDictionary = @{@"Debug" : sampleTargetConfigurationClassString,
+                                           @"Release" : sampleTargetConfigurationClassString};
+        
+        NSDictionary *rootDictionary = @{kCriolloKitConfigDictionaryKey: configDictionary};
+        
+        [CRLaunchConfigurator stub:@selector(rootDictionary) andReturn:rootDictionary];
+        [[theBlock(^{
+            [CRLaunchConfigurator setup];
+        }) should] raise];
+    });
 });
 
 SPEC_END
