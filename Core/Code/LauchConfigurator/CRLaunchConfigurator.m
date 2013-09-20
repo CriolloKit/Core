@@ -7,7 +7,7 @@
 //
 
 #import "CRLaunchConfigurator.h"
-#import "CRTargetConfiguration.h"
+
 #import "CRException.h"
 
 #define STR_VALUE(arg)      #arg
@@ -17,11 +17,9 @@ static  NSString *const kCriolloKitConfigDictionaryKey = @"CriolloKit";
 
 @implementation CRLaunchConfigurator
 
-+ (void)setup
++ (id <CRTargetConfiguration>)getTargetConfiguration
 {
-    id <CRTargetConfiguration> targetConfiguration = [self buildConfiguration];
-    
-    [targetConfiguration setup];
+    return [self buildConfiguration];
 }
 
 + (id <CRTargetConfiguration>)buildConfiguration
@@ -31,7 +29,7 @@ static  NSString *const kCriolloKitConfigDictionaryKey = @"CriolloKit";
     
     Class configurationClass = [self configurationClassFromDictionary:configurationDictionary currentConfiguration:currentConfiguration];
     
-    id <CRTargetConfiguration> configuration = [[configurationClass alloc] init];
+    id <CRTargetConfiguration> configuration = [configurationClass new];
     
     if (!configuration) {
         NSString *exceptionReason = [NSString stringWithFormat:@"Cannot create instance of %@", NSStringFromClass(configurationClass)];

@@ -19,9 +19,9 @@ describe(@"CRLaunchConfigurator Spec", ^{
        
        [CRLaunchConfigurator stub:@selector(rootDictionary) andReturn:rootDictionary];
        
-       [[CRSampleTargetConfguration should] receive:@selector(setup)];
+       NSObject <CRTargetConfiguration> *targetConfiguration = [CRLaunchConfigurator getTargetConfiguration];
        
-       [CRLaunchConfigurator setup];
+       [[targetConfiguration shouldNot] beNil];
    });
     
     it(@"Should raise due to non exists key in info dictionary", ^{
@@ -46,7 +46,7 @@ describe(@"CRLaunchConfigurator Spec", ^{
         
         [CRLaunchConfigurator stub:@selector(rootDictionary) andReturn:rootDictionary];
         [[theBlock(^{
-            [CRLaunchConfigurator setup];
+            [CRLaunchConfigurator getTargetConfiguration];
         }) should] raise];
     });
 });

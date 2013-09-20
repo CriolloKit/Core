@@ -1,14 +1,25 @@
 PODS:
-  - Kiwi (2.2.1):
+  - CriolloKitDI (0.0.2):
+    - ISMethodSwizzling
+    - MAObjCRuntime
+  - ISMethodSwizzling (0.0.2)
+  - Kiwi (2.2.2):
+    - Kiwi/SenTestingKit
+  - Kiwi/ARC (2.2.2)
+  - Kiwi/NonARC (2.2.2)
+  - Kiwi/SenTestingKit (2.2.2):
     - Kiwi/ARC
     - Kiwi/NonARC
-  - Kiwi/ARC (2.2.1)
-  - Kiwi/NonARC (2.2.1)
+  - MAObjCRuntime (0.0.1)
 
 DEPENDENCIES:
+  - CriolloKitDI
   - Kiwi
 
 SPEC CHECKSUMS:
-  Kiwi: e6524ba0eaa1b28af7af146bdee5314b32aa3edb
+  CriolloKitDI: f116bb486f0e21be9327ded24b3d0e4c2d280fe4
+  ISMethodSwizzling: 806aafc79dbdafbc482eae3f86b0c632ed8b1f08
+  Kiwi: 03539aeb004ccd42bdbc31253617b26364315df4
+  MAObjCRuntime: 284004079156d10cb8237bc3ffcfa3a0e1a0af22
 
-COCOAPODS: 0.24.0
+COCOAPODS: 0.25.0

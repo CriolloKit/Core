@@ -8,8 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+@class CRDIContainer;
+
 @protocol CRTargetConfiguration <NSObject>
 
 - (void)setup;
+
+@optional
+
+@property (nonatomic, strong) CRDIContainer *container;
 
 @end

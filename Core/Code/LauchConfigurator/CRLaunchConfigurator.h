@@ -7,9 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CRTargetConfiguration.h"
 
 @interface CRLaunchConfigurator : NSObject
 
-+ (void)setup;
++ (id <CRTargetConfiguration>)getTargetConfiguration;
 
 @end

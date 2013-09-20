@@ -56,7 +56,7 @@ describe(@"AppDelegate", ^{
         
         KWMock <CRPushNotificationReceiver> *mock = [KWMock mockForProtocol:@protocol(CRPushNotificationReceiver)];
         
-        appDelegate.pushNotificationReceiver = mock;
+        appDelegate.ioc_pushNotificationReceiver = mock;
         
         [mock stub:@selector(didReceiveRemoteNotification:) withBlock:^id(NSArray *params) {
             [[params[0] should] beKindOfClass:[NSDictionary class]];
@@ -74,7 +74,7 @@ describe(@"AppDelegate", ^{
         
         KWMock <CRLocalNotificationReceiver> *mock = [KWMock mockForProtocol:@protocol(CRLocalNotificationReceiver)];
         
-        appDelegate.localNotificationReceiver = mock;
+        appDelegate.ioc_localNotificationReceiver = mock;
         
         [mock stub:@selector(didReceiveLocalNotification:) withBlock:^id(NSArray *params) {
             [[params[0] should] beKindOfClass:[UILocalNotification class]];
@@ -90,7 +90,7 @@ describe(@"AppDelegate", ^{
 
         KWMock <CRAppLifeConfigurator> *mock = [KWMock mockForProtocol:@protocol(CRAppLifeConfigurator)];
         
-        appDelegate.appLifeCycleConfigurator = mock;
+        appDelegate.ioc_appLifeCycleConfigurator = mock;
         
         SEL selectors[] = {
             @selector(applicationDidBecomeActive:),
@@ -180,7 +180,7 @@ describe(@"AppDelegate", ^{
     it(@"Should conform to CRAppWindowOrientationConfigurator", ^{
         KWMock <CRAppWindowOrientationConfigurator> *mock = [KWMock mockForProtocol:@protocol(CRAppWindowOrientationConfigurator)];
         
-        appDelegate.windowOrientationConfigurator = mock;
+        appDelegate.ioc_windowOrientationConfigurator = mock;
         
         [mock stub:@selector(supportedInterfaceOrientationsForWindow:)];
         
@@ -190,7 +190,7 @@ describe(@"AppDelegate", ^{
     it(@"Should conform to CRStatusBarOrientationHandler", ^{
         KWMock <CRStatusBarOrientationHandler> *mock = [KWMock mockForProtocol:@protocol(CRStatusBarOrientationHandler)];
         
-        appDelegate.statusBarOrientationHandler = mock;
+        appDelegate.ioc_statusBarOrientationHandler = mock;
         
         SEL selectors[] = {
             @selector(willChangeStatusBarOrientation:duration:),
