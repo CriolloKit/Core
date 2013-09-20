@@ -70,6 +70,7 @@
 		EA88EFD817ECDACF00612E25 /* CRException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRException.h; sourceTree = "<group>"; };
 		EA88EFD917ECDACF00612E25 /* CRException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRException.m; sourceTree = "<group>"; };
 		EA88EFDB17ECDBDC00612E25 /* CRLaunchConfigurator_PrivateHeaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRLaunchConfigurator_PrivateHeaders.h; sourceTree = "<group>"; };
+		EAB1CC2017ECDE5400B7865E /* CRInitializer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CRInitializer.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +203,7 @@
 				EA60AED217EAEF8E002780AC /* CRAppWindowOrientationConfigurator.h */,
 				EA60AED317EAEFC4002780AC /* CRStatusBarOrientationHandler.h */,
 				EA88EFD217ECCEF400612E25 /* CRTargetConfiguration.h */,
+				EAB1CC2017ECDE5400B7865E /* CRInitializer.h */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
