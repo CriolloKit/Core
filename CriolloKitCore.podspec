@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "CriolloKitCore"
-  s.version      = "0.0.1"
+  s.version      = "0.0.3"
   s.summary      = "Core structure for Crillo Kit"
 
   s.description  = <<-DESC
@@ -11,13 +11,15 @@ Pod::Spec.new do |s|
 
   s.license      = 'MIT (example)'
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
-  s.author       = { "Sergey Zenchenko" => "sergeizenchenko@gmail.com" }
+  s.author       = { "CriolloKit" => "criollokit@gmail.com" }
 
   s.platform     = :ios, '6.0'
 
   s.source       = { :git => "https://github.com/CriolloKit/Core.git", :tag => "#{s.version}" }
 
   s.source_files  = 'Core/Code', 'Core/Code/**/*.{h,m}'
+
+  s.xcconfig     = { 'GCC_PREPROCESSOR_DEFINITIONS' => 'CONFIGURATION=${CONFIGURATION}' }
 
   s.frameworks = 'Foundation'
 
