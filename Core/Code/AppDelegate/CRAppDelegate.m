@@ -31,6 +31,7 @@
 @synthesize ioc_appMemoryWarrningConfigurator;
 @synthesize ioc_windowOrientationConfigurator;
 @synthesize ioc_statusBarOrientationHandler;
+@synthesize ioc_rootTranscation;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -39,6 +40,8 @@
     [self setupIOC];
     [self setupAppearance];
     [self setupAPNS];
+    
+    [self performRootTransaction];
     
     return YES;
 }
@@ -65,6 +68,11 @@
 - (void)setupAppearance
 {
     [self.ioc_appearanceConfigurator setup];
+}
+
+- (void)performRootTransaction
+{
+    [self.ioc_rootTranscation perform];
 }
 
 #pragma mark -
