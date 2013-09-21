@@ -7,7 +7,7 @@
 //
 
 #import "CRBaseTransaction.h"
-#import "CRBaseTransactionDispatcher.h"
+#import "CRTransactionDispatcher.h"
 #import "CRException.h"
 
 @interface CRBaseTransaction ()
@@ -18,12 +18,12 @@
 
 - (void)call
 {
-    [[CRBaseTransactionDispatcher sharedDispatcher] dispatchTransaction:self];
+    [[CRTransactionDispatcher sharedDispatcher] dispatchTransaction:self];
 }
 
 - (void)callWithObject:(id)aObject
 {
-    [[CRBaseTransactionDispatcher sharedDispatcher] dispatchTransaction:self withObject:aObject];
+    [[CRTransactionDispatcher sharedDispatcher] dispatchTransaction:self withObject:aObject];
 }
 
 - (void)perform

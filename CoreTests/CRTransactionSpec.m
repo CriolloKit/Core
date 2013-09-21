@@ -16,7 +16,7 @@ SPEC_BEGIN(CRTransactionSpec)
 
 describe(@"CRTransaction specs", ^{
     it(@"Should perform transaction", ^{
-        CRBaseTransactionDispatcher *dispatcher = [CRBaseTransactionDispatcher new];
+        CRTransactionDispatcher *dispatcher = [CRTransactionDispatcher new];
         CRBaseTransaction *mockTransaction = [KWMock mockForClass:[CRBaseTransaction class]];
         
         [mockTransaction stub:@selector(perform)];
@@ -42,9 +42,9 @@ describe(@"CRTransaction specs", ^{
     });
     
     it(@"Should return same dispatcher", ^{
-        CRBaseTransactionDispatcher *baseDispatcher = [CRBaseTransactionDispatcher new];
+        CRTransactionDispatcher *baseDispatcher = [CRTransactionDispatcher new];
         
-        [CRBaseTransactionDispatcher setSharedDispatcher:baseDispatcher];
+        [CRTransactionDispatcher setSharedDispatcher:baseDispatcher];
         
         CRHandlersTransactionDispatcher *handlersDispatcher = [CRHandlersTransactionDispatcher sharedDispatcher];
         
