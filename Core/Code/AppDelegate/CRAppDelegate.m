@@ -72,6 +72,7 @@
 
 - (void)performRootTransaction
 {
+    [self.ioc_rootTranscation setWindow:self.window];
     [self.ioc_rootTranscation call];
 }
 

@@ -12,7 +12,7 @@
 
 - (BOOL)handleTransaction:(id)aTransaction withObject:(id)aObject
 {
-    NSLog(@"Peforming transaction :%@ withObject: %@", aTransaction, aObject);
+    NSLog(@"Peforming transaction %@ withObject %@", aTransaction, aObject);
     
     return YES;
 }
