@@ -11,23 +11,9 @@
 
 @implementation CRBaseTargetConfiguration
 
-- (id)init
-{
-    self = [super init];
-    if (self) {
-        [self setupDefaults];
-    }
-    return self;
-}
-
-- (void)setupDefaults
-{
-    [CRBaseTransactionDispatcher setSharedDispatcher:self.transactionDispatcher];
-}
-
 - (void)setup
 {
-    
+    [CRBaseTransactionDispatcher setSharedDispatcher:self.transactionDispatcher];
 }
 
 - (id <CRTransactionDispatcher>)transactionDispatcher
