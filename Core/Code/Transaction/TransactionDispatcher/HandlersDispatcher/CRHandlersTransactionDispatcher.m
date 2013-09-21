@@ -10,6 +10,7 @@
 #import "CRTransactionHandler.h"
 #import "CRTargetConfiguration.h"
 #import "CRTransactionConfigurator.h"
+#import "CRTransactionHandlers.h"
 #import <CRDIContainer.h>
 
 @interface CRHandlersTransactionDispatcher ()
@@ -27,9 +28,9 @@
         @throw [CRDIException exceptionWithReason:@"You must setup default container"];
     }
     
-    id <CRTargetConfiguration, CRTransactionConfigurator> targetConfiguration = [[defultContainer builderForProtocol:@protocol(CRTargetConfiguration)] build];
+    id <CRTransactionHandlers> transactionHandlers = [[[CRDIContainer defaultContainer] builderForProtocol:@protocol(CRTransactionHandlers)] build];
     
-    return [self initWithTransactionHandlers:targetConfiguration.transactionHandlers];
+    return [self initWithTransactionHandlers:transactionHandlers.transactionHandlersArray];
 }
 
 - (id)initWithTransactionHandlers:(NSArray *)aTransactionHandlers

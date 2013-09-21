@@ -19,7 +19,6 @@
 		AD9254B417E620B9006EC87F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AD9254B217E620B9006EC87F /* InfoPlist.strings */; };
 		EA0D368417EDD8140022E216 /* CRBaseTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0D368317EDD8140022E216 /* CRBaseTransaction.m */; };
 		EA0D368917EDD8BD0022E216 /* CRTransactionLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0D368817EDD8BD0022E216 /* CRTransactionLogger.m */; };
-		EA0D369317EDDD050022E216 /* CRBaseConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0D369217EDDD050022E216 /* CRBaseConfiguration.m */; };
 		EA0D369617EDDE2A0022E216 /* CRTransactionSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0D369517EDDE2A0022E216 /* CRTransactionSpec.m */; };
 		EA0D369A17EDE17C0022E216 /* CRBaseTransactionDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0D369917EDE17C0022E216 /* CRBaseTransactionDispatcher.m */; };
 		EA0D369E17EDE1AD0022E216 /* CRHandlersTransactionDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0D369D17EDE1AD0022E216 /* CRHandlersTransactionDispatcher.m */; };
@@ -68,14 +67,13 @@
 		EA0D368817EDD8BD0022E216 /* CRTransactionLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRTransactionLogger.m; sourceTree = "<group>"; };
 		EA0D368A17EDD8D40022E216 /* CRTransactionHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CRTransactionHandler.h; sourceTree = "<group>"; };
 		EA0D368B17EDD9AE0022E216 /* CRTransactionConfigurator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CRTransactionConfigurator.h; sourceTree = "<group>"; };
-		EA0D369117EDDD050022E216 /* CRBaseConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRBaseConfiguration.h; sourceTree = "<group>"; };
-		EA0D369217EDDD050022E216 /* CRBaseConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRBaseConfiguration.m; sourceTree = "<group>"; };
 		EA0D369517EDDE2A0022E216 /* CRTransactionSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRTransactionSpec.m; sourceTree = "<group>"; };
 		EA0D369817EDE17C0022E216 /* CRBaseTransactionDispatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRBaseTransactionDispatcher.h; sourceTree = "<group>"; };
 		EA0D369917EDE17C0022E216 /* CRBaseTransactionDispatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRBaseTransactionDispatcher.m; sourceTree = "<group>"; };
 		EA0D369C17EDE1AD0022E216 /* CRHandlersTransactionDispatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRHandlersTransactionDispatcher.h; sourceTree = "<group>"; };
 		EA0D369D17EDE1AD0022E216 /* CRHandlersTransactionDispatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRHandlersTransactionDispatcher.m; sourceTree = "<group>"; };
 		EA0D369F17EDE2320022E216 /* CRTransactionDispatcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CRTransactionDispatcher.h; sourceTree = "<group>"; };
+		EA0D36A417EDED350022E216 /* CRTransactionHandlers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CRTransactionHandlers.h; sourceTree = "<group>"; };
 		EA60AEC717EAEBB3002780AC /* CRAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRAppDelegate.h; sourceTree = "<group>"; };
 		EA60AEC817EAEBB3002780AC /* CRAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRAppDelegate.m; sourceTree = "<group>"; };
 		EA60AECB17EAEC59002780AC /* CRAppearanceConfigurator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRAppearanceConfigurator.h; sourceTree = "<group>"; };
@@ -178,7 +176,6 @@
 		AD0CCEBD17E50CFA00792099 /* Code */ = {
 			isa = PBXGroup;
 			children = (
-				EA0D369017EDDCFD0022E216 /* BaseConfiguration */,
 				EA0D367A17EDD48A0022E216 /* Transaction */,
 				EA88EFD717ECDAC400612E25 /* Exception */,
 				EA88EFCD17ECCA4C00612E25 /* LauchConfigurator */,
@@ -256,15 +253,6 @@
 			path = TransactionDispatcher;
 			sourceTree = "<group>";
 		};
-		EA0D369017EDDCFD0022E216 /* BaseConfiguration */ = {
-			isa = PBXGroup;
-			children = (
-				EA0D369117EDDD050022E216 /* CRBaseConfiguration.h */,
-				EA0D369217EDDD050022E216 /* CRBaseConfiguration.m */,
-			);
-			path = BaseConfiguration;
-			sourceTree = "<group>";
-		};
 		EA0D369717EDE1520022E216 /* BaseDispatcher */ = {
 			isa = PBXGroup;
 			children = (
@@ -308,6 +296,7 @@
 				EA60AED317EAEFC4002780AC /* CRStatusBarOrientationHandler.h */,
 				EA88EFD217ECCEF400612E25 /* CRTargetConfiguration.h */,
 				EAB1CC2017ECDE5400B7865E /* CRInitializer.h */,
+				EA0D36A417EDED350022E216 /* CRTransactionHandlers.h */,
 				EA0D367E17EDD5180022E216 /* CRTransaction.h */,
 				EA0D367F17EDD54E0022E216 /* CRParametrizedTransaction.h */,
 				EA0D368017EDD5760022E216 /* CRRootTransaction.h */,
@@ -512,7 +501,6 @@
 				EA88EFD017ECCA6000612E25 /* CRLaunchConfigurator.m in Sources */,
 				EA60AEC917EAEBB3002780AC /* CRAppDelegate.m in Sources */,
 				EA0D369E17EDE1AD0022E216 /* CRHandlersTransactionDispatcher.m in Sources */,
-				EA0D369317EDDD050022E216 /* CRBaseConfiguration.m in Sources */,
 				EA0D368917EDD8BD0022E216 /* CRTransactionLogger.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
