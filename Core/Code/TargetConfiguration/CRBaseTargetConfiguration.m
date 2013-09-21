@@ -23,7 +23,7 @@
 
 - (void)setup
 {
-    @throw [CRException exceptionWithReason:@"verride method"];
+    @throw [CRException exceptionWithReason:@"override method"];
 }
 
 - (CRTransactionDispatcher *)transactionDispatcher
