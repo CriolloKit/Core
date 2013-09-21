@@ -9,13 +9,10 @@
 #import <Foundation/Foundation.h>
 
 @class CRDIContainer;
-@class CRTransactionDispatcher;
 
 @protocol CRTargetConfiguration <NSObject>
 
 - (void)setup;
-
-- (CRTransactionDispatcher *)transactionDispatcher;
 
 @optional
 

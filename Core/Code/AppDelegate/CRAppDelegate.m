@@ -8,6 +8,7 @@
 
 #import "CRAppDelegate.h"
 #import "CRLaunchConfigurator.h"
+#import "CRException.h"
 
 #import <CRDIContainer.h>
 #import <CRDIInjector.h>
@@ -31,7 +32,7 @@
 @synthesize ioc_appMemoryWarrningConfigurator;
 @synthesize ioc_windowOrientationConfigurator;
 @synthesize ioc_statusBarOrientationHandler;
-@synthesize ioc_rootTranscation;
+@synthesize ioc_launcher;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -41,7 +42,11 @@
     [self setupAppearance];
     [self setupAPNS];
     
-    [self performRootTransaction];
+    if (!ioc_launcher) {
+        @throw [CRException exceptionWithReason:@"launcher not configured"];
+    }
+    
+    [ioc_launcher launchWithWindow:self.window];
     
     return YES;
 }
@@ -68,12 +73,6 @@
 - (void)setupAppearance
 {
     [self.ioc_appearanceConfigurator setup];
-}
-
-- (void)performRootTransaction
-{
-    [self.ioc_rootTranscation setWindow:self.window];
-    [self.ioc_rootTranscation call];
 }
 
 #pragma mark -

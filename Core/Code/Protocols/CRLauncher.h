@@ -1,5 +1,5 @@
 //
-//  CRTransaction.h
+//  CRLauncher.h
 //  Core
 //
 //  Created by TheSooth on 9/21/13.
@@ -7,10 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-@protocol CRTransaction <NSObject>
+@protocol CRLauncher <NSObject>
 
-@optional
-- (void)call;
+- (void)launchWithWindow:(UIWindow *)aWindow;
 
 @end

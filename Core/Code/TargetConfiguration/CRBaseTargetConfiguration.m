@@ -7,28 +7,14 @@
 //
 
 #import "CRBaseTargetConfiguration.h"
-#import "CRTransactionDispatcher.h"
 #import "CRException.h"
 
 @implementation CRBaseTargetConfiguration
-
-- (id)init
-{
-    self = [super init];
-    if (self) {
-        [CRTransactionDispatcher setSharedDispatcher:self.transactionDispatcher];
-    }
-    return self;
-}
 
 - (void)setup
 {
     @throw [CRException exceptionWithReason:@"override method"];
 }
 
-- (CRTransactionDispatcher *)transactionDispatcher
-{
-    return [CRTransactionDispatcher new];
-}
 
 @end
