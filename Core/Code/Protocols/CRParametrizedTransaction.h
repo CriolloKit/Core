@@ -11,6 +11,6 @@
 @protocol CRParametrizedTransaction <NSObject>
 
 @optional
-- (void)performWithObject:(id)aObject;
+- (void)callWithObject:(id)aObject;
 
 @end

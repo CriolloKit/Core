@@ -16,7 +16,7 @@ SPEC_BEGIN(CRTransactionSpec)
 describe(@"CRTransaction specs", ^{
     it(@"Should perform transaction", ^{
         CRBaseTransactionDispatcher *dispatcher = [CRBaseTransactionDispatcher new];
-        NSObject <CRTransaction> *mockTransaction = [KWMock mockForProtocol:@protocol(CRTransaction)];
+        CRBaseTransaction *mockTransaction = [KWMock mockForClass:[CRBaseTransaction class]];
         
         [mockTransaction stub:@selector(perform)];
         
@@ -30,7 +30,7 @@ describe(@"CRTransaction specs", ^{
         NSArray *handlers = @[transactionLogger];
         CRHandlersTransactionDispatcher *handlersTransactionDispatcher = [[CRHandlersTransactionDispatcher alloc] initWithTransactionHandlers:handlers];
     
-        NSObject <CRTransaction> *mockTransction = [KWMock mockForProtocol:@protocol(CRTransaction)];
+        CRBaseTransaction *mockTransction = [KWMock mockForClass:[CRBaseTransaction class]];
         
         [mockTransction stub:@selector(perform)];
         

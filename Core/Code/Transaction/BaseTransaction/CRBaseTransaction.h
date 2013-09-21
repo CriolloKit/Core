@@ -12,7 +12,7 @@
 
 @interface CRBaseTransaction : NSObject <CRTransaction, CRParametrizedTransaction>
 
-- (void)call;
-- (void)callWithObject:(id)aObject;
+- (void)perform;
+- (void)performWithObject:(id)aObject;
 
 @end

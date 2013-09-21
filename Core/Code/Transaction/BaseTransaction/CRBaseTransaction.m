@@ -22,9 +22,10 @@
     [self.ioc_transactionDispatcher dispatchTransaction:self];
 }
 
-- (void)callWithObject:(id)aObject
+- (void)call:(id)aObject
 {
     [self.ioc_transactionDispatcher dispatchTransaction:self withObject:aObject];
 }
+
 
 @end

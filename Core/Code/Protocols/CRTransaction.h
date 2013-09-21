@@ -11,6 +11,6 @@
 @protocol CRTransaction <NSObject>
 
 @optional
-- (void)perform;
+- (void)call;
 
 @end

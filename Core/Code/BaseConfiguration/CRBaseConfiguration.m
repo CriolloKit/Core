@@ -17,11 +17,6 @@
     @throw [CRException exceptionWithReason:@"You must override this method"];
 }
 
-- (id <CRRootTransaction>)rootTransaction
-{
-    return nil;
-}
-
 - (NSArray *)transactionHandlers
 {
     return @[[CRTransactionLogger new]];

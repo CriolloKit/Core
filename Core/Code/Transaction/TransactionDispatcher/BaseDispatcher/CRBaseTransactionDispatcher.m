@@ -11,14 +11,14 @@
 
 @implementation CRBaseTransactionDispatcher
 
-- (void)dispatchTransaction:(id<CRTransaction>)aTransaction
+- (void)dispatchTransaction:(CRBaseTransaction *)aTransaction
 {
     if ([self canPerfomrTransaction:aTransaction withObject:Nil]) {
         [aTransaction perform];
     }
 }
 
-- (void)dispatchTransaction:(id<CRParametrizedTransaction>)aTransaction withObject:(id)aObject
+- (void)dispatchTransaction:(CRBaseTransaction *)aTransaction withObject:(id)aObject
 {
     if ([self canPerfomrTransaction:aTransaction withObject:aObject]) {
         [aTransaction performWithObject:aObject];

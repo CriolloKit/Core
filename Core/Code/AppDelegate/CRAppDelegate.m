@@ -72,7 +72,7 @@
 
 - (void)performRootTransaction
 {
-    [self.ioc_rootTranscation perform];
+    [self.ioc_rootTranscation call];
 }
 
 #pragma mark -

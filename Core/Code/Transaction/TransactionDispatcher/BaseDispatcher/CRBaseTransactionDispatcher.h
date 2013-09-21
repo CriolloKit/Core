@@ -11,11 +11,12 @@
 #import "CRTransaction.h"
 #import "CRParametrizedTransaction.h"
 #import "CRTransactionDispatcher.h"
+#import "CRBaseTransaction.h"
 
 @interface CRBaseTransactionDispatcher : NSObject <CRTransactionDispatcher>
 
-- (void)dispatchTransaction:(id <CRTransaction>)aTransaction;
+- (void)dispatchTransaction:(CRBaseTransaction *)aTransaction;
 
-- (void)dispatchTransaction:(id<CRParametrizedTransaction>)aTransaction withObject:(id)aObject;
+- (void)dispatchTransaction:(CRBaseTransaction *)aTransaction withObject:(id)aObject;
 
 @end

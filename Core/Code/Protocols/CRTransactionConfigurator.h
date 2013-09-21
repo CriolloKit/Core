@@ -12,6 +12,5 @@
 @protocol CRTransactionConfigurator <NSObject>
 
 @property (nonatomic, strong, readonly) NSArray *transactionHandlers;
-@property (nonatomic, strong, readonly) id <CRRootTransaction> rootTransaction;
 
 @end
