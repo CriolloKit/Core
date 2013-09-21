@@ -15,8 +15,4 @@
 
 @interface CRBaseTransactionDispatcher : NSObject <CRTransactionDispatcher>
 
-- (void)dispatchTransaction:(CRBaseTransaction *)aTransaction;
-
-- (void)dispatchTransaction:(CRBaseTransaction *)aTransaction withObject:(id)aObject;
-
 @end

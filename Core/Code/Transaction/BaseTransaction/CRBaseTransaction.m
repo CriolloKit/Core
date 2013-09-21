@@ -8,10 +8,9 @@
 
 #import "CRBaseTransaction.h"
 #import "CRBaseTransactionDispatcher.h"
+#import "CRException.h"
 
 @interface CRBaseTransaction ()
-
-@property (nonatomic, strong) CRBaseTransactionDispatcher *ioc_transactionDispatcher;
 
 @end
 
@@ -19,12 +18,22 @@
 
 - (void)call
 {
-    [self.ioc_transactionDispatcher dispatchTransaction:self];
+    [[CRBaseTransactionDispatcher sharedDispatcher] dispatchTransaction:self];
 }
 
-- (void)call:(id)aObject
+- (void)callWithObject:(id)aObject
 {
-    [self.ioc_transactionDispatcher dispatchTransaction:self withObject:aObject];
+    [[CRBaseTransactionDispatcher sharedDispatcher] dispatchTransaction:self withObject:aObject];
+}
+
+- (void)perform
+{
+    @throw [CRException exceptionWithReason:@"override method"];
+}
+
+- (void)performWithObject:(id)aObject
+{
+    @throw [CRException exceptionWithReason:@"override method"];
 }
 
 

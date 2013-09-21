@@ -9,7 +9,19 @@
 #import "CRBaseTransactionDispatcher.h"
 #import "CRTransactionHandler.h"
 
+static id <CRTransactionDispatcher> sharedDispatcher = nil;
+
 @implementation CRBaseTransactionDispatcher
+
++ (id <CRTransactionDispatcher>)sharedDispatcher
+{
+    return sharedDispatcher;
+}
+
++ (void)setSharedDispatcher:(id<CRTransactionDispatcher>)aSharedDispatcher
+{
+    sharedDispatcher = aSharedDispatcher;
+}
 
 - (void)dispatchTransaction:(CRBaseTransaction *)aTransaction
 {

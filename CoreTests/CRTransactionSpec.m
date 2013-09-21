@@ -10,6 +10,7 @@
 #import "CRHandlersTransactionDispatcher.h"
 #import "CRTransaction.h"
 #import "CRTransactionLogger.h"
+#import "CRHandlersTransactionDispatcher.h"
 
 SPEC_BEGIN(CRTransactionSpec)
 
@@ -38,6 +39,16 @@ describe(@"CRTransaction specs", ^{
         [[transactionLogger should] receive:@selector(handleTransaction:withObject:) andReturn:@(YES)];
         
         [handlersTransactionDispatcher dispatchTransaction:mockTransction];
+    });
+    
+    it(@"Should return same dispatcher", ^{
+        CRBaseTransactionDispatcher *baseDispatcher = [CRBaseTransactionDispatcher new];
+        
+        [CRBaseTransactionDispatcher setSharedDispatcher:baseDispatcher];
+        
+        CRHandlersTransactionDispatcher *handlersDispatcher = [CRHandlersTransactionDispatcher sharedDispatcher];
+        
+        [[baseDispatcher should] equal:handlersDispatcher];
     });
 });
 
