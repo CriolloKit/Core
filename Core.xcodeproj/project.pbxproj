@@ -17,7 +17,6 @@
 		AD9254AD17E620B9006EC87F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD0CCEA817E50CD000792099 /* UIKit.framework */; };
 		AD9254AE17E620B9006EC87F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD0CCE9717E50CD000792099 /* Foundation.framework */; };
 		AD9254B417E620B9006EC87F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AD9254B217E620B9006EC87F /* InfoPlist.strings */; };
-		EA0D369617EDDE2A0022E216 /* CRTransactionSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0D369517EDDE2A0022E216 /* CRTransactionSpec.m */; };
 		EA0D36AF17EDF4A90022E216 /* CRBaseTargetConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0D36AE17EDF4A90022E216 /* CRBaseTargetConfiguration.m */; };
 		EA60AEC917EAEBB3002780AC /* CRAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EA60AEC817EAEBB3002780AC /* CRAppDelegate.m */; };
 		EA88EFD017ECCA6000612E25 /* CRLaunchConfigurator.m in Sources */ = {isa = PBXBuildFile; fileRef = EA88EFCF17ECCA6000612E25 /* CRLaunchConfigurator.m */; };
@@ -55,7 +54,6 @@
 		AD9254B117E620B9006EC87F /* CoreTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CoreTests-Info.plist"; sourceTree = "<group>"; };
 		AD9254B317E620B9006EC87F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AD9254B817E620B9006EC87F /* CoreTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CoreTests-Prefix.pch"; sourceTree = "<group>"; };
-		EA0D369517EDDE2A0022E216 /* CRTransactionSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRTransactionSpec.m; sourceTree = "<group>"; };
 		EA0D36AD17EDF4A90022E216 /* CRBaseTargetConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRBaseTargetConfiguration.h; sourceTree = "<group>"; };
 		EA0D36AE17EDF4A90022E216 /* CRBaseTargetConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRBaseTargetConfiguration.m; sourceTree = "<group>"; };
 		EA0D370117EE2A430022E216 /* CRLauncher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CRLauncher.h; sourceTree = "<group>"; };
@@ -175,7 +173,6 @@
 			children = (
 				AD8A53AA17E730020043DBD5 /* CRLaunchConfiguratorSpec.m */,
 				68BC5D3517EC662D00F554CF /* AppDelegateSpec.m */,
-				EA0D369517EDDE2A0022E216 /* CRTransactionSpec.m */,
 				AD9254B017E620B9006EC87F /* Supporting Files */,
 			);
 			path = CoreTests;
@@ -431,7 +428,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA0D369617EDDE2A0022E216 /* CRTransactionSpec.m in Sources */,
 				AD8A53AB17E730020043DBD5 /* CRLaunchConfiguratorSpec.m in Sources */,
 				68BC5D3617EC662D00F554CF /* AppDelegateSpec.m in Sources */,
 				EA88EFD617ECD38D00612E25 /* CRSampleTargetConfguration.m in Sources */,
