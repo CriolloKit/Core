@@ -12,6 +12,7 @@
 
 #import <CRDIContainer.h>
 #import <CRDIInjector.h>
+#import <CRDIClassBuilder.h>
 
 @interface CRAppDelegate () <CRApplicationDelegate>
 
@@ -68,7 +69,19 @@
     [CRDIInjector setDefaultInjector:self.injector];
     
     [self.injector injectTo:self];
+    
+    [self setupInitializers];
 }
+
+- (void)setupInitializers
+{
+    NSArray *initializers = [self.defaultContainer buidersForProtocol:@protocol(CRInitializer)];
+    
+    for (CRDIClassBuilder *classBulder in initializers) {
+        [[classBulder build] initialize];
+    }
+}
+
 
 - (void)setupAppearance
 {
