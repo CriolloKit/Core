@@ -13,6 +13,7 @@
 #import <CRDIContainer.h>
 #import <CRDIInjector.h>
 #import <CRDIClassBuilder.h>
+#import "CRInitializer.h"
 
 @interface CRAppDelegate () <CRApplicationDelegate>
 
