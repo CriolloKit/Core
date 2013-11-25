@@ -1,7 +1,8 @@
 Pod::Spec.new do |s|
   s.name         = "CriolloKitCore"
   s.version      = "0.0.7"
-  s.summary      = "Core structure for Crillo Kit."
+  s.summary      = "Core structure for Crillo Kit"
+
 
   s.description  = <<-DESC
                 Core structure for Crillo Kit.

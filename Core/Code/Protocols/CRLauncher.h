@@ -1,5 +1,5 @@
 //
-//  CRTransactionLogger.h
+//  CRLauncher.h
 //  Core
 //
 //  Created by TheSooth on 9/21/13.
@@ -7,8 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "CRTransactionHandler.h"
+#import <UIKit/UIKit.h>
 
-@interface CRTransactionLogger : NSObject <CRTransactionHandler>
+@protocol CRLauncher <NSObject>
+
+- (void)launch;
 
 @end

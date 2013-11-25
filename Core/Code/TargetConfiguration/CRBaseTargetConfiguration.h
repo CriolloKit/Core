@@ -1,5 +1,5 @@
 //
-//  CRTransaction.h
+//  CRBaseTargetConfiguration.h
 //  Core
 //
 //  Created by TheSooth on 9/21/13.
@@ -7,10 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CRTargetConfiguration.h"
 
-@protocol CRTransaction <NSObject>
-
-@optional
-- (void)call;
+@interface CRBaseTargetConfiguration : NSObject <CRTargetConfiguration>
 
 @end

@@ -16,7 +16,7 @@
 #import "CRAppMemoryWarrningConfigurator.h"
 #import "CRAppWindowOrientationConfigurator.h"
 #import "CRStatusBarOrientationHandler.h"
-#import "CRRootTransaction.h"
+#import "CRLauncher.h"
 
 @protocol CRApplicationDelegate <NSObject>
 
@@ -30,7 +30,6 @@
 @property (nonatomic, strong) id <CRAppMemoryWarrningConfigurator> ioc_appMemoryWarrningConfigurator;
 @property (nonatomic, strong) id <CRAppWindowOrientationConfigurator> ioc_windowOrientationConfigurator;
 @property (nonatomic, strong) id <CRStatusBarOrientationHandler> ioc_statusBarOrientationHandler;
-@property (nonatomic, strong) id <CRRootTransaction> ioc_rootTranscation;
-
+@property (nonatomic, strong) id <CRLauncher> ioc_launcher;
 
 @end
