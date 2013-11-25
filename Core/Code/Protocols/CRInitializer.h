@@ -1,13 +1,15 @@
 //
-//  Core.h
+//  CRInitializer.h
 //  Core
 //
-//  Created by Sergey Zenchenko on 9/15/13.
+//  Created by TheSooth on 9/20/13.
 //  Copyright (c) 2013 CriolloKit. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
-@interface Core : NSObject
+@protocol CRInitializer <NSObject>
+
+- (void)initialize;
 
 @end
