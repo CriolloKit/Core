@@ -36,6 +36,15 @@
 @synthesize ioc_statusBarOrientationHandler;
 @synthesize ioc_launcher;
 
+- (UIWindow *)window
+{
+    if (_window == nil) {
+        return [[UIApplication sharedApplication] keyWindow];
+    } else {
+        return _window;
+    }
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [self setupIOC];
