@@ -8,12 +8,19 @@
 
 #import "CRAppDelegate.h"
 #import "CRLaunchConfigurator.h"
+<<<<<<< HEAD
 #import "CRException.h"
+=======
+#import "CRInitializer.h"
+>>>>>>> 0.0.8
 
 #import <CRDIContainer.h>
 #import <CRDIInjector.h>
 #import <CRDIClassBuilder.h>
+<<<<<<< HEAD
 #import "CRInitializer.h"
+=======
+>>>>>>> 0.0.8
 
 @interface CRAppDelegate () <CRApplicationDelegate>
 
@@ -82,7 +89,6 @@
         [[classBulder build] initialize];
     }
 }
-
 
 - (void)setupAppearance
 {
@@ -245,7 +251,7 @@
         return [self.ioc_windowOrientationConfigurator supportedInterfaceOrientationsForWindow:window];
     }
     
-    return 0;
+    return UIInterfaceOrientationMaskPortrait;
 }
 
 #pragma mark -
