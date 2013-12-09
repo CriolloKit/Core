@@ -244,7 +244,7 @@
         return [self.ioc_windowOrientationConfigurator supportedInterfaceOrientationsForWindow:window];
     }
     
-    return 0;
+    return UIInterfaceOrientationMaskPortrait;
 }
 
 #pragma mark -
