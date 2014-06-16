@@ -7,15 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		66E34437796B41269B8B3763 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FDEFA980437471E83707E51 /* libPods.a */; };
 		67EFA16DC7584A93A960D1BE /* libPods-CoreTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 193A1A8FC72841DB9E3C1AF0 /* libPods-CoreTests.a */; };
+		68BC5D3617EC662D00F554CF /* AppDelegateSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 68BC5D3517EC662D00F554CF /* AppDelegateSpec.m */; };
 		AD0CCE9817E50CD000792099 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD0CCE9717E50CD000792099 /* Foundation.framework */; };
-		AD0CCEC017E50CFA00792099 /* Core.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0CCEBF17E50CFA00792099 /* Core.m */; };
-		AD8A53AB17E730020043DBD5 /* Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8A53AA17E730020043DBD5 /* Spec.m */; };
+		AD8A53AB17E730020043DBD5 /* CRLaunchConfiguratorSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8A53AA17E730020043DBD5 /* CRLaunchConfiguratorSpec.m */; };
 		AD8A53AC17E730CD0043DBD5 /* libCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AD0CCE9417E50CD000792099 /* libCore.a */; };
 		AD9254AC17E620B9006EC87F /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD9254AB17E620B9006EC87F /* SenTestingKit.framework */; };
 		AD9254AD17E620B9006EC87F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD0CCEA817E50CD000792099 /* UIKit.framework */; };
 		AD9254AE17E620B9006EC87F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD0CCE9717E50CD000792099 /* Foundation.framework */; };
 		AD9254B417E620B9006EC87F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AD9254B217E620B9006EC87F /* InfoPlist.strings */; };
+		EA0D36AF17EDF4A90022E216 /* CRBaseTargetConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0D36AE17EDF4A90022E216 /* CRBaseTargetConfiguration.m */; };
+		EA60AEC917EAEBB3002780AC /* CRAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EA60AEC817EAEBB3002780AC /* CRAppDelegate.m */; };
+		EA88EFD017ECCA6000612E25 /* CRLaunchConfigurator.m in Sources */ = {isa = PBXBuildFile; fileRef = EA88EFCF17ECCA6000612E25 /* CRLaunchConfigurator.m */; };
+		EA88EFD617ECD38D00612E25 /* CRSampleTargetConfguration.m in Sources */ = {isa = PBXBuildFile; fileRef = EA88EFD517ECD38D00612E25 /* CRSampleTargetConfguration.m */; };
+		EA88EFDA17ECDACF00612E25 /* CRException.m in Sources */ = {isa = PBXBuildFile; fileRef = EA88EFD917ECDACF00612E25 /* CRException.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -32,24 +38,46 @@
 
 /* Begin PBXFileReference section */
 		193A1A8FC72841DB9E3C1AF0 /* libPods-CoreTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CoreTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FDEFA980437471E83707E51 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		49C7572DD6DF4FF59CB01FB3 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		68BC5D3517EC662D00F554CF /* AppDelegateSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegateSpec.m; sourceTree = "<group>"; };
+		68BC5D3917EC6C7700F554CF /* CRApplicationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRApplicationDelegate.h; sourceTree = "<group>"; };
 		87516076236D45A5879F0703 /* Pods-CoreTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoreTests.xcconfig"; path = "Pods/Pods-CoreTests.xcconfig"; sourceTree = "<group>"; };
 		AD0CCE9417E50CD000792099 /* libCore.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCore.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD0CCE9717E50CD000792099 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AD0CCE9B17E50CD000792099 /* Core-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Core-Prefix.pch"; sourceTree = "<group>"; };
 		AD0CCEA517E50CD000792099 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		AD0CCEA817E50CD000792099 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		AD0CCEAF17E50CD000792099 /* CoreTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CoreTests-Info.plist"; sourceTree = "<group>"; };
-		AD0CCEB117E50CD000792099 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		AD0CCEBE17E50CFA00792099 /* Core.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Core.h; sourceTree = "<group>"; };
-		AD0CCEBF17E50CFA00792099 /* Core.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Core.m; sourceTree = "<group>"; };
-		AD8A53AA17E730020043DBD5 /* Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Spec.m; sourceTree = "<group>"; };
+		AD8A53AA17E730020043DBD5 /* CRLaunchConfiguratorSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRLaunchConfiguratorSpec.m; sourceTree = "<group>"; };
 		AD9254AA17E620B9006EC87F /* CoreTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD9254AB17E620B9006EC87F /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		AD9254B117E620B9006EC87F /* CoreTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CoreTests-Info.plist"; sourceTree = "<group>"; };
 		AD9254B317E620B9006EC87F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		AD9254B517E620B9006EC87F /* CoreTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreTests.h; sourceTree = "<group>"; };
-		AD9254B617E620B9006EC87F /* CoreTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreTests.m; sourceTree = "<group>"; };
 		AD9254B817E620B9006EC87F /* CoreTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CoreTests-Prefix.pch"; sourceTree = "<group>"; };
+		EA0D36AD17EDF4A90022E216 /* CRBaseTargetConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRBaseTargetConfiguration.h; sourceTree = "<group>"; };
+		EA0D36AE17EDF4A90022E216 /* CRBaseTargetConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRBaseTargetConfiguration.m; sourceTree = "<group>"; };
+		EA0D370117EE2A430022E216 /* CRLauncher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CRLauncher.h; sourceTree = "<group>"; };
+		EA60AEC717EAEBB3002780AC /* CRAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRAppDelegate.h; sourceTree = "<group>"; };
+		EA60AEC817EAEBB3002780AC /* CRAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRAppDelegate.m; sourceTree = "<group>"; };
+		EA60AECB17EAEC59002780AC /* CRAppearanceConfigurator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRAppearanceConfigurator.h; sourceTree = "<group>"; };
+		EA60AECC17EAECD0002780AC /* CRPushNotificationReceiver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRPushNotificationReceiver.h; sourceTree = "<group>"; };
+		EA60AECD17EAED3C002780AC /* CRPushNotificationsConfigurator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRPushNotificationsConfigurator.h; sourceTree = "<group>"; };
+		EA60AECE17EAED7F002780AC /* CRLocalNotificationReceiver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CRLocalNotificationReceiver.h; sourceTree = "<group>"; };
+		EA60AECF17EAEDBA002780AC /* CRAppURLHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CRAppURLHandler.h; sourceTree = "<group>"; };
+		EA60AED017EAEE52002780AC /* CRAppRestorationStateConfigurator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CRAppRestorationStateConfigurator.h; sourceTree = "<group>"; };
+		EA60AED117EAEF37002780AC /* CRAppLifeConfigurator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CRAppLifeConfigurator.h; sourceTree = "<group>"; };
+		EA60AED217EAEF8E002780AC /* CRAppWindowOrientationConfigurator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CRAppWindowOrientationConfigurator.h; sourceTree = "<group>"; };
+		EA60AED317EAEFC4002780AC /* CRStatusBarOrientationHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CRStatusBarOrientationHandler.h; sourceTree = "<group>"; };
+		EA60AED417EAF04C002780AC /* CRAppMemoryWarrningConfigurator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CRAppMemoryWarrningConfigurator.h; sourceTree = "<group>"; };
+		EA88EFCE17ECCA6000612E25 /* CRLaunchConfigurator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRLaunchConfigurator.h; sourceTree = "<group>"; };
+		EA88EFCF17ECCA6000612E25 /* CRLaunchConfigurator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRLaunchConfigurator.m; sourceTree = "<group>"; };
+		EA88EFD217ECCEF400612E25 /* CRTargetConfiguration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CRTargetConfiguration.h; sourceTree = "<group>"; };
+		EA88EFD417ECD38D00612E25 /* CRSampleTargetConfguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRSampleTargetConfguration.h; sourceTree = "<group>"; };
+		EA88EFD517ECD38D00612E25 /* CRSampleTargetConfguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRSampleTargetConfguration.m; sourceTree = "<group>"; };
+		EA88EFD817ECDACF00612E25 /* CRException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRException.h; sourceTree = "<group>"; };
+		EA88EFD917ECDACF00612E25 /* CRException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRException.m; sourceTree = "<group>"; };
+		EA88EFDB17ECDBDC00612E25 /* CRLaunchConfigurator_PrivateHeaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRLaunchConfigurator_PrivateHeaders.h; sourceTree = "<group>"; };
+		EAB1CC2017ECDE5400B7865E /* CRInitializer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CRInitializer.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +86,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD0CCE9817E50CD000792099 /* Foundation.framework in Frameworks */,
+				66E34437796B41269B8B3763 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,11 +109,11 @@
 			isa = PBXGroup;
 			children = (
 				AD0CCE9917E50CD000792099 /* Core */,
-				AD0CCEAD17E50CD000792099 /* CoreTests */,
 				AD9254AF17E620B9006EC87F /* CoreTests */,
 				AD0CCE9617E50CD000792099 /* Frameworks */,
 				AD0CCE9517E50CD000792099 /* Products */,
 				87516076236D45A5879F0703 /* Pods-CoreTests.xcconfig */,
+				49C7572DD6DF4FF59CB01FB3 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,6 +134,7 @@
 				AD0CCEA817E50CD000792099 /* UIKit.framework */,
 				193A1A8FC72841DB9E3C1AF0 /* libPods-CoreTests.a */,
 				AD9254AB17E620B9006EC87F /* SenTestingKit.framework */,
+				2FDEFA980437471E83707E51 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -126,29 +156,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		AD0CCEAD17E50CD000792099 /* CoreTests */ = {
-			isa = PBXGroup;
-			children = (
-				AD0CCEAE17E50CD000792099 /* Supporting Files */,
-				AD8A53AA17E730020043DBD5 /* Spec.m */,
-			);
-			path = CoreTests;
-			sourceTree = "<group>";
-		};
-		AD0CCEAE17E50CD000792099 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				AD0CCEAF17E50CD000792099 /* CoreTests-Info.plist */,
-				AD0CCEB017E50CD000792099 /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		AD0CCEBD17E50CFA00792099 /* Code */ = {
 			isa = PBXGroup;
 			children = (
-				AD0CCEBE17E50CFA00792099 /* Core.h */,
-				AD0CCEBF17E50CFA00792099 /* Core.m */,
+				EA0D36AC17EDF4A20022E216 /* TargetConfiguration */,
+				EA88EFD717ECDAC400612E25 /* Exception */,
+				EA88EFCD17ECCA4C00612E25 /* LauchConfigurator */,
+				EA60AEC617EAEBA8002780AC /* AppDelegate */,
+				EA60AECA17EAEC36002780AC /* Protocols */,
 			);
 			path = Code;
 			sourceTree = "<group>";
@@ -156,8 +171,8 @@
 		AD9254AF17E620B9006EC87F /* CoreTests */ = {
 			isa = PBXGroup;
 			children = (
-				AD9254B517E620B9006EC87F /* CoreTests.h */,
-				AD9254B617E620B9006EC87F /* CoreTests.m */,
+				AD8A53AA17E730020043DBD5 /* CRLaunchConfiguratorSpec.m */,
+				68BC5D3517EC662D00F554CF /* AppDelegateSpec.m */,
 				AD9254B017E620B9006EC87F /* Supporting Files */,
 			);
 			path = CoreTests;
@@ -166,11 +181,79 @@
 		AD9254B017E620B9006EC87F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EA88EFD317ECD37F00612E25 /* TestObjects */,
+				EA88EFDB17ECDBDC00612E25 /* CRLaunchConfigurator_PrivateHeaders.h */,
 				AD9254B117E620B9006EC87F /* CoreTests-Info.plist */,
 				AD9254B217E620B9006EC87F /* InfoPlist.strings */,
 				AD9254B817E620B9006EC87F /* CoreTests-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EA0D36AC17EDF4A20022E216 /* TargetConfiguration */ = {
+			isa = PBXGroup;
+			children = (
+				EA0D36AD17EDF4A90022E216 /* CRBaseTargetConfiguration.h */,
+				EA0D36AE17EDF4A90022E216 /* CRBaseTargetConfiguration.m */,
+			);
+			path = TargetConfiguration;
+			sourceTree = "<group>";
+		};
+		EA60AEC617EAEBA8002780AC /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				EA60AEC717EAEBB3002780AC /* CRAppDelegate.h */,
+				EA60AEC817EAEBB3002780AC /* CRAppDelegate.m */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		EA60AECA17EAEC36002780AC /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				68BC5D3917EC6C7700F554CF /* CRApplicationDelegate.h */,
+				EA60AECB17EAEC59002780AC /* CRAppearanceConfigurator.h */,
+				EA60AECD17EAED3C002780AC /* CRPushNotificationsConfigurator.h */,
+				EA60AECC17EAECD0002780AC /* CRPushNotificationReceiver.h */,
+				EA60AECE17EAED7F002780AC /* CRLocalNotificationReceiver.h */,
+				EA60AED117EAEF37002780AC /* CRAppLifeConfigurator.h */,
+				EA60AECF17EAEDBA002780AC /* CRAppURLHandler.h */,
+				EA60AED017EAEE52002780AC /* CRAppRestorationStateConfigurator.h */,
+				EA60AED417EAF04C002780AC /* CRAppMemoryWarrningConfigurator.h */,
+				EA60AED217EAEF8E002780AC /* CRAppWindowOrientationConfigurator.h */,
+				EA60AED317EAEFC4002780AC /* CRStatusBarOrientationHandler.h */,
+				EA88EFD217ECCEF400612E25 /* CRTargetConfiguration.h */,
+				EAB1CC2017ECDE5400B7865E /* CRInitializer.h */,
+				EA0D370117EE2A430022E216 /* CRLauncher.h */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		EA88EFCD17ECCA4C00612E25 /* LauchConfigurator */ = {
+			isa = PBXGroup;
+			children = (
+				EA88EFCE17ECCA6000612E25 /* CRLaunchConfigurator.h */,
+				EA88EFCF17ECCA6000612E25 /* CRLaunchConfigurator.m */,
+			);
+			path = LauchConfigurator;
+			sourceTree = "<group>";
+		};
+		EA88EFD317ECD37F00612E25 /* TestObjects */ = {
+			isa = PBXGroup;
+			children = (
+				EA88EFD417ECD38D00612E25 /* CRSampleTargetConfguration.h */,
+				EA88EFD517ECD38D00612E25 /* CRSampleTargetConfguration.m */,
+			);
+			path = TestObjects;
+			sourceTree = "<group>";
+		};
+		EA88EFD717ECDAC400612E25 /* Exception */ = {
+			isa = PBXGroup;
+			children = (
+				EA88EFD817ECDACF00612E25 /* CRException.h */,
+				EA88EFD917ECDACF00612E25 /* CRException.m */,
+			);
+			path = Exception;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,9 +263,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AD0CCEB717E50CD000792099 /* Build configuration list for PBXNativeTarget "Core" */;
 			buildPhases = (
+				1532576C44E449A28796279C /* Check Pods Manifest.lock */,
 				AD0CCE9017E50CD000792099 /* Sources */,
 				AD0CCE9117E50CD000792099 /* Frameworks */,
 				AD0CCE9217E50CD000792099 /* CopyFiles */,
+				F3ACE0770BFF4F5E94ACB4D0 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -252,6 +337,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1532576C44E449A28796279C /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		98D1956580304FBBAC1B6869 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -295,6 +395,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Pods-CoreTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		F3ACE0770BFF4F5E94ACB4D0 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -302,7 +417,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD0CCEC017E50CFA00792099 /* Core.m in Sources */,
+				EA88EFDA17ECDACF00612E25 /* CRException.m in Sources */,
+				EA88EFD017ECCA6000612E25 /* CRLaunchConfigurator.m in Sources */,
+				EA60AEC917EAEBB3002780AC /* CRAppDelegate.m in Sources */,
+				EA0D36AF17EDF4A90022E216 /* CRBaseTargetConfiguration.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,21 +428,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD8A53AB17E730020043DBD5 /* Spec.m in Sources */,
+				AD8A53AB17E730020043DBD5 /* CRLaunchConfiguratorSpec.m in Sources */,
+				68BC5D3617EC662D00F554CF /* AppDelegateSpec.m in Sources */,
+				EA88EFD617ECD38D00612E25 /* CRSampleTargetConfguration.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		AD0CCEB017E50CD000792099 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AD0CCEB117E50CD000792099 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 		AD9254B217E620B9006EC87F /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -410,10 +522,12 @@
 		};
 		AD0CCEB817E50CD000792099 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 49C7572DD6DF4FF59CB01FB3 /* Pods.xcconfig */;
 			buildSettings = {
 				DSTROOT = /tmp/Core.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Core/Core-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "CONFIGURATION=$(CONFIGURATION)";
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -424,10 +538,12 @@
 		};
 		AD0CCEB917E50CD000792099 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 49C7572DD6DF4FF59CB01FB3 /* Pods.xcconfig */;
 			buildSettings = {
 				DSTROOT = /tmp/Core.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Core/Core-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "CONFIGURATION=$(CONFIGURATION)";
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -451,6 +567,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/Code/Protocols";
 				VALID_ARCHS = "armv7 i386";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -470,6 +587,7 @@
 				INFOPLIST_FILE = "CoreTests/CoreTests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/Code/Protocols";
 				VALID_ARCHS = "armv7 i386";
 				WRAPPER_EXTENSION = octest;
 			};
