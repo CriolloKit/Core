@@ -94,7 +94,11 @@
 - (void)setupAPNS
 {
     if (self.ioc_pushNotificationsConfigurator) {
-        [[UIApplication sharedApplication] registerForRemoteNotificationTypes:self.ioc_pushNotificationsConfigurator.notificationTypes];
+        if ([[UIApplication sharedApplication] respondsToSelector:@selector(registerUserNotificationSettings:)]) {
+            [[UIApplication sharedApplication] registerUserNotificationSettings:self.ioc_pushNotificationsConfigurator.notificationSettings];
+        } else {
+            [[UIApplication sharedApplication] registerForRemoteNotificationTypes:self.ioc_pushNotificationsConfigurator.notificationTypes];
+        }
     }
 }
 

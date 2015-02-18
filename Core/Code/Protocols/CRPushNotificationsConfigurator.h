@@ -13,6 +13,7 @@
 - (void)didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken;
 
 - (UIRemoteNotificationType)notificationTypes;
+- (UIUserNotificationSettings *)notificationSettings;
 
 @optional
 
