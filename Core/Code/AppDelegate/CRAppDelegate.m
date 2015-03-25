@@ -96,6 +96,7 @@
     if (self.ioc_pushNotificationsConfigurator) {
         if ([[UIApplication sharedApplication] respondsToSelector:@selector(registerUserNotificationSettings:)]) {
             [[UIApplication sharedApplication] registerUserNotificationSettings:self.ioc_pushNotificationsConfigurator.notificationSettings];
+            [[UIApplication sharedApplication] registerForRemoteNotifications];
         } else {
             [[UIApplication sharedApplication] registerForRemoteNotificationTypes:self.ioc_pushNotificationsConfigurator.notificationTypes];
         }
